@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<opml version="2.0">
+	<head>
+		<title>Activism_Links</title>
+		<dateCreated>Wed, 26 Oct 2022 19:59:11 GMT</dateCreated>
+		<dateModified>Thu, 22 Dec 2022 23:53:57 GMT</dateModified>
+		<ownerTwitterScreenName>AndySylvester99</ownerTwitterScreenName>
+		<ownerName>Andy Sylvester</ownerName>
+		<ownerId>http://twitter.com/AndySylvester99</ownerId>
+		<urlUpdateSocket>ws://drummer.scripting.com:1232/</urlUpdateSocket>
+		<expansionState>1,3</expansionState>
+		<lastCursor>11</lastCursor>
+		<flPublic>true</flPublic>
+		<urlPublic>http://drummer.scripting.com/AndySylvester99/Activism_Links.opml</urlPublic>
+		</head>
+	<body>
+		<outline text="Introduction" created="Wed, 26 Oct 2022 19:59:11 GMT">
+			<outline text="This is a resource for collecting links to support activism in our world (see this post for background). Send links to @AndySylvester99 or @KenSmith!" created="Wed, 26 Oct 2022 20:03:16 GMT"/>
+			</outline>
+		<outline text="Training Resources" created="Wed, 26 Oct 2022 20:03:04 GMT">
+			<outline text="&lt;a href=&quot;https://ctb.ku.edu/en&quot;&gt;Community Tool Box&lt;/a&gt; from the University of Kansas: &quot;Get help taking action, teaching, and training others in organizing for community development.&quot; " created="Tue, 24 May 2022 19:38:35 GMT"/>
+			<outline text="&lt;a href=&quot;http://www.cityoforlando.net/ocnr/ilead/&quot;&gt;City of Orlando&lt;/a&gt;: Neighborhood training source" created="Tue, 24 May 2022 19:41:24 GMT"/>
+			<outline text="&lt;a href=&quot;http://www.cityoforlando.net/ocnr/wp-content/uploads/sites/7/2019/02/TakingLeadershipSkillsNextLevel_2019_Print.pdf&quot;&gt;City of Orlando&lt;/a&gt;: Taking Your Leadership Skills to the Next Level (PDF)" created="Tue, 24 May 2022 19:42:29 GMT"/>
+			<outline text="&lt;a href=&quot;https://www.cupertino.org/i-want-to/know-more-about/neighborhood-block-leader&quot;&gt;City of Cupertino&lt;/a&gt;: Neighborhood Block Leader Resources" created="Tue, 24 May 2022 20:17:27 GMT"/>
+			<outline text="&lt;a href=&quot;https://www.trainingforchange.org/&quot;&gt;Training for Change&lt;/a&gt;: Training for Change is a training and capacity building organization for activists and organizers. We believe strong training and group facilitation is vital to movement building for social justice and radical change." created="Wed, 26 Oct 2022 20:01:33 GMT"/>
+			<outline text="&lt;a href=&quot;https://trainings.350.org/&quot;&gt;Trainings.350.org&lt;/a&gt; - Build people power and capacity to run effective campaigns and movements to tackle the climate crisis. Find tools, skills, resources for yourself, your group, your campaign and your trainings" created="Mon, 31 Oct 2022 22:36:34 GMT" tags="activism, action, training"/>
+			<outline text="&lt;a href=&quot;https://wagingnonviolence.org/2022/11/movements-long-history-of-playing-inside-outside-game-effectively/&quot;&gt;Waging Non-Violence Blog&lt;/a&gt; - Movements have a long history of playing the inside-outside game effectively (Nov 2022) " created="Tue, 13 Dec 2022 23:07:18 GMT" tags="activism">
+				<outline text="Strategies that challenge or wield state power may be in tension, but many movements use both simultaneously to transform society." created="Tue, 13 Dec 2022 23:08:05 GMT"/>
+				</outline>
+			<outline text="&lt;a href=&quot;https://africancoachingnetwork.org/first-exposure-training-fet/&quot;&gt;African Coaching Network&lt;/a&gt; - First Exposure Training" created="Wed, 14 Dec 2022 00:14:52 GMT" tags="activism, training">
+				<outline text="Our First Exposure Training (FET) examines why movements are the preferred vehicles for sustained social change. It examines theories of power, why and how movements emerge, how they develop and which factors determine or influence movement’s success. " created="Wed, 14 Dec 2022 00:15:53 GMT"/>
+				<outline text="The FET helps movements and activists to develop a movement mindset. It focusses on participation as a key factor for potential success of a movement and equips participants with practical tools for planning and implementing tactics which are at the core of movement building and campaigns."/>
+				</outline>
+			<outline text="&lt;a href=&quot;https://strategicdoing.net/&quot;&gt;Strategic Doing&lt;/a&gt; - Ten Skills for Agile Leadership " created="Thu, 22 Dec 2022 23:44:15 GMT">
+				<outline text="Strategic Doing teaches people how to form collaborations quickly, move them toward measurable outcomes and make adjustments along the way. In today’s world, collaboration is essential to meet the complex challenges we face." created="Thu, 22 Dec 2022 23:51:14 GMT"/>
+				<outline text="Strategic Doing enables leaders to design and guide new networks that generate innovative solutions. It is a new strategy discipline that is lean, agile and fast—just what organizations, communities and regions need to survive and thrive." created="Thu, 22 Dec 2022 23:51:39 GMT"/>
+				</outline>
+			</outline>
+		</body>
+	</opml>
