@@ -100,7 +100,14 @@ current. There's no polyfill or transpile step.
 
 ## Credits
 
-The OPML parser and the outline browser began as [Dave Winer](http://scripting.com/)'s code
-from [scripting.com](http://scripting.com/), reworked here to drop the jQuery dependency.
-Bootstrap 2.3.1 is Apache 2.0. Font Awesome Free 5.2.0 ships its own `LICENSE.txt` in
-`fontawesome-free-5.2.0-web/` (icons CC BY 4.0, fonts SIL OFL 1.1, code MIT).
+The OPML parser (`opml.js`) and the outline browser (`outlinebrowsercode.js`) began as
+Dave Winer's code from [scripting.com](http://scripting.com/), reworked here to drop the
+jQuery dependency.
+
+## License
+
+[MIT](LICENSE).
+
+The bundled third-party components keep their own licenses: Bootstrap 2.3.1 is Apache 2.0,
+and Font Awesome Free 5.2.0 ships its `LICENSE.txt` in `fontawesome-free-5.2.0-web/`
+(icons CC BY 4.0, fonts SIL OFL 1.1, code MIT).
