@@ -134,7 +134,14 @@ function startup () {
 			}
 		if (theToggle !== null) { //the outline still works without the switch
 			theToggle.addEventListener ("change", function () {
-				setAllExpanded (theToggle.checked);
+				//slideUp and slideDown restore the styles they saved when they
+				//finish, so a second flip landing mid-slide would save a height
+				//that's still moving and strand the level at it. The switch is
+				//out of action until the slide is done -- it's 150ms.
+				theToggle.disabled = true;
+				animateAllExpanded (theToggle.checked, function () {
+					theToggle.disabled = false;
+					});
 				saveExpansionState ();
 				});
 			}

@@ -45,6 +45,12 @@ any single node by clicking its wedge clears it. Turning it back on re-expands e
 Whatever state you leave it in is saved with the rest of the expansion state, so the outline
 comes back the way you left it.
 
+The outline slides open and shut rather than jumping. Only the outermost level that's actually
+changing is animated — anything nested inside it is carried along by that slide, and animating
+both would mean sliding to a height that's still moving. A node that's shut inside a parent
+that's already open still slides on its own. The switch is out of action for the 150ms the
+slide takes, so a second flip can't land in the middle of the first.
+
 If the file can't be read the page says so instead of coming up blank.
 
 ### Only files in this folder, by default

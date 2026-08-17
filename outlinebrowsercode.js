@@ -106,14 +106,79 @@ function eachOutlineWedge (callback) { //every wedge, with the level it controls
 		callback (theWedge, document.getElementById ("idOutlineLevel" + idnum));
 		});
 	}
+function setWedgeDirection (theWedge, flExpanded) {
+	theWedge.className = "fa fa-caret-" + (flExpanded ? "down" : "right");
+	theWedge.style.color = flExpanded ? "silver" : "black";
+	}
 function setAllExpanded (flExpanded) { //expand or collapse the whole outline at once
 	eachOutlineWedge (function (theWedge, theLevel) {
-		theWedge.className = "fa fa-caret-" + (flExpanded ? "down" : "right");
-		theWedge.style.color = flExpanded ? "silver" : "black";
+		setWedgeDirection (theWedge, flExpanded);
 		if (theLevel !== null) {
 			theLevel.style.display = flExpanded ? "block" : "none";
 			}
 		});
+	}
+function animateAllExpanded (flExpanded, callback) { //same, with the slide
+	const durationAllLevels = 150; //a bit slower than one wedge, there's more moving
+	//Only the outermost level that's actually changing slides. Anything nested
+	//inside it is carried by that slide, and animating both would mean measuring
+	//a height that's still moving. A level whose ancestors aren't changing slides
+	//on its own, so opening one shut node inside an open parent still animates.
+	var toSlide = [], toSetDirectly = [];
+	var theItems = [];
+	eachOutlineWedge (function (theWedge, theLevel) {
+		var flWas = theWedge.classList.contains ("fa-caret-down");
+		//every wedge flips now, so the carets -- and any state saved straight
+		//after this call -- already describe where the outline is going
+		setWedgeDirection (theWedge, flExpanded);
+		if (theLevel !== null) {
+			theItems.push ({level: theLevel, flChanging: flWas !== flExpanded});
+			}
+		});
+	function nextLevelUp (theElement) {
+		if (theElement.parentElement === null) {
+			return (null);
+			}
+		return (theElement.parentElement.closest ("[id^=\"idOutlineLevel\"]"));
+		}
+	function hasChangingAncestor (theLevel) {
+		for (var a = nextLevelUp (theLevel); a !== null; a = nextLevelUp (a)) {
+			for (var i = 0; i < theItems.length; i++) {
+				if ((theItems [i].level === a) && theItems [i].flChanging) {
+					return (true);
+					}
+				}
+			}
+		return (false);
+		}
+	theItems.forEach (function (item) {
+		if (item.flChanging) { //already where it's going? leave it alone
+			(hasChangingAncestor (item.level) ? toSetDirectly : toSlide).push (item.level);
+			}
+		});
+	function setTheRest (flShow) {
+		toSetDirectly.forEach (function (theLevel) {
+			theLevel.style.display = flShow ? "block" : "none";
+			});
+		}
+	if (flExpanded) {
+		setTheRest (true); //before the slide, so it slides to its finished height
+		toSlide.forEach (function (theLevel) {
+			slideDown (theLevel, durationAllLevels);
+			});
+		}
+	else {
+		toSlide.forEach (function (theLevel) {
+			slideUp (theLevel, durationAllLevels);
+			});
+		//after the slide, so the parent doesn't visibly shrink before it moves
+		window.setTimeout (function () {
+			setTheRest (false);
+			}, durationAllLevels);
+		}
+	if (callback !== undefined) {
+		window.setTimeout (callback, durationAllLevels);
+		}
 	}
 function isEverythingExpanded () {
 	var flAll = true;
