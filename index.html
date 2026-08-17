@@ -8,12 +8,13 @@
 2.3.1's JS requires jQuery and nothing on this page uses it), and scripting.com's
 basic code.js (it runs (function ($) {...}) (jQuery) at load time, so it can't
 load without jQuery -- the few utilities this page used from it are now at the
-bottom of code.js). The stylesheets are unchanged. -->
+bottom of code.js). The stylesheets are unchanged, except that the two
+fonts.googleapis.com links were replaced by fonts/ubuntu.css, which serves the
+same typeface from this folder. -->
 
 		<link rel="stylesheet" href="bootstrap.css"> 	
 		<link rel="stylesheet" href="fontawesome-free-5.2.0-web/css/all.css">
-		<link href="//fonts.googleapis.com/css?family=Ubuntu:400,500i,700" rel="stylesheet">
-		<link href="//fonts.googleapis.com/css?family=Rancho" rel="stylesheet">
+		<link rel="stylesheet" href="fonts/ubuntu.css">
 
 		<link rel="stylesheet" href="menuappdialog.css" type="text/css">
 

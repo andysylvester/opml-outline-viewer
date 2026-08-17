@@ -43,6 +43,8 @@
 .menuKeystroke:before {
 	content: "";
 	}
+/* Rancho isn't bundled -- this page draws no menubar, so nothing with this id
+is ever rendered. Bundle it alongside Ubuntu in fonts/ if that changes. */
  #idMenuProductName {
 	font-family: "Rancho";
 	font-size: 32px;

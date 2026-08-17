@@ -78,8 +78,10 @@ const viewerConfig = {
 | `opml.js` | Parses OPML into a JavaScript object, and can stringify it back. |
 | `outlinebrowsercode.js` | Renders the object as nested `<ul>`s, and handles the expand/collapse wedges. |
 | `outlinebrowserstyles.css`, `styles.css` | Outline and page styling. |
+| `menuappdialog.css` | Menu, dialog and toolbar styling carried over from the original page. |
 | `bootstrap.css` | Bootstrap 2.3.1, bundled locally. Supplies the per-level list indentation. |
 | `fontawesome-free-5.2.0-web/` | Font Awesome Free 5.2.0, bundled locally. Supplies the caret icons. |
+| `fonts/` | Ubuntu, bundled locally. The page's typeface. |
 | `Activism_Links.opml` | The sample outline. |
 
 ## No dependencies
@@ -90,8 +92,14 @@ This started as a jQuery page and was converted:
 - `code.js` reads over HTTP with `fetch` and an `AbortController` timeout instead of `$.ajax`
 - `outlinebrowsercode.js` uses `querySelectorAll` / `getElementById`, and its `slideUp` and
   `slideDown` helpers animate with a CSS transition instead of jQuery's animation queue
-- Bootstrap's JavaScript was dropped (nothing on the page used it), and Bootstrap and Font
-  Awesome are served from this folder rather than a CDN
+- Bootstrap's JavaScript was dropped (nothing on the page used it), and Bootstrap, Font
+  Awesome and the Ubuntu font are served from this folder rather than a CDN
+
+Nothing on the page makes a request to another host, so it renders the same offline as on.
+The Ubuntu font in `fonts/` is regular, bold and regular italic, latin and latin-ext only —
+the cyrillic and greek subsets Google serves are left out, and `fonts/ubuntu.css` says where
+to add them back. Rancho, which the original page also loaded, isn't bundled: the only rule
+that asked for it styles a menubar this page doesn't draw.
 
 The rendered HTML is byte-for-byte identical to what the jQuery version produced.
 
@@ -109,5 +117,6 @@ jQuery dependency.
 [MIT](LICENSE).
 
 The bundled third-party components keep their own licenses: Bootstrap 2.3.1 is Apache 2.0,
-and Font Awesome Free 5.2.0 ships its `LICENSE.txt` in `fontawesome-free-5.2.0-web/`
-(icons CC BY 4.0, fonts SIL OFL 1.1, code MIT).
+Font Awesome Free 5.2.0 ships its `LICENSE.txt` in `fontawesome-free-5.2.0-web/` (icons
+CC BY 4.0, fonts SIL OFL 1.1, code MIT), and the Ubuntu font is under the Ubuntu Font
+Licence 1.0, in `fonts/LICENSE.txt`.
