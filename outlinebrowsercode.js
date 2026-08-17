@@ -93,7 +93,42 @@ function getExpansionState () {
 		}
 	return (theList);
 	}
+function eachOutlineWedge (callback) { //every wedge, with the level it controls
+	var theWedges = document.querySelectorAll (".aOutlineWedgeLink i");
+	Array.prototype.forEach.call (theWedges, function (theWedge) {
+		//an outline whose <body> has text gets a head wedge, and styles.css hides
+		//it (.divOutlineHead). It controls the outermost level, so collapsing it
+		//would blank the page with no visible way to bring it back. Skip it.
+		if (theWedge.closest (".divOutlineHead") !== null) {
+			return;
+			}
+		var idnum = theWedge.id.substr ("idOutlineWedge".length);
+		callback (theWedge, document.getElementById ("idOutlineLevel" + idnum));
+		});
+	}
+function setAllExpanded (flExpanded) { //expand or collapse the whole outline at once
+	eachOutlineWedge (function (theWedge, theLevel) {
+		theWedge.className = "fa fa-caret-" + (flExpanded ? "down" : "right");
+		theWedge.style.color = flExpanded ? "silver" : "black";
+		if (theLevel !== null) {
+			theLevel.style.display = flExpanded ? "block" : "none";
+			}
+		});
+	}
+function isEverythingExpanded () {
+	var flAll = true;
+	eachOutlineWedge (function (theWedge) {
+		if (!theWedge.classList.contains ("fa-caret-down")) {
+			flAll = false;
+			}
+		});
+	return (flAll);
+	}
 function applyExpansionState (theList) {
+	//the outline renders fully expanded, so whatever the list doesn't name has to
+	//be collapsed here -- without this a saved state could only ever expand nodes,
+	//and a collapsed one came back expanded on the next load
+	setAllExpanded (false);
 	var splits = theList.split (",");
 	for (var i = 0; i < splits.length; i++) {
 		var theWedge = document.getElementById ("idOutlineWedge" + splits [i]);

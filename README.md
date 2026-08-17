@@ -35,6 +35,16 @@ underscores are shown as spaces, so `Activism_Links` displays as "Activism Links
 Each outline's expanded/collapsed state is remembered separately in `localStorage`, so
 switching between outlines doesn't disturb the others.
 
+## Expand all / collapse all
+
+The switch under the heading expands or collapses the whole outline at once. Outlines open
+fully expanded, so it starts on.
+
+It behaves like a "select all" box: it's on only while every node is expanded, and collapsing
+any single node by clicking its wedge clears it. Turning it back on re-expands everything.
+Whatever state you leave it in is saved with the rest of the expansion state, so the outline
+comes back the way you left it.
+
 If the file can't be read the page says so instead of coming up blank.
 
 ### Only files in this folder, by default
@@ -74,7 +84,7 @@ const viewerConfig = {
 | File | What it is |
 | --- | --- |
 | `index.html` | The page. Loads the scripts and calls `startup()` on `DOMContentLoaded`. |
-| `code.js` | Reads the outline, picks the title, renders it, saves expansion state. |
+| `code.js` | Reads the outline, picks the title, renders it, wires up the expand-all switch, saves expansion state. |
 | `opml.js` | Parses OPML into a JavaScript object, and can stringify it back. |
 | `outlinebrowsercode.js` | Renders the object as nested `<ul>`s, and handles the expand/collapse wedges. |
 | `outlinebrowserstyles.css`, `styles.css` | Outline and page styling. |

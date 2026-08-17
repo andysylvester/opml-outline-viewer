@@ -122,9 +122,27 @@ function startup () {
 		if (savedState !== null) {
 			applyExpansionState (savedState)
 			}
-		outlineBrowserData.expandCollapseCallback = function (idnum) {
+		var theToggle = document.getElementById ("idExpandToggle");
+		function saveExpansionState () {
 			localStorage.setItem (nameState, getExpansionState ());
 			}
+		function syncToggle () { //on only when everything is expanded, the way a
+			//"select all" box clears as soon as one item is unchecked
+			if (theToggle !== null) {
+				theToggle.checked = isEverythingExpanded ();
+				}
+			}
+		if (theToggle !== null) { //the outline still works without the switch
+			theToggle.addEventListener ("change", function () {
+				setAllExpanded (theToggle.checked);
+				saveExpansionState ();
+				});
+			}
+		outlineBrowserData.expandCollapseCallback = function (idnum) {
+			saveExpansionState ();
+			syncToggle ();
+			}
+		syncToggle (); //a saved state may have left it partly collapsed
 		// hitCounter ();
 		});
 	}
