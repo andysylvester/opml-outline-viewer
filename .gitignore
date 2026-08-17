@@ -1,5 +1,8 @@
-# Claude Code local settings and session history
-.claude/
+# Claude Code local settings and session history, but not .claude/skills --
+# those describe how to work on this project and belong in the repo.
+.claude/*
+!.claude/skills/
+.claude/settings.local.json
 
 # OS cruft
 Thumbs.db
