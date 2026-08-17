@@ -110,8 +110,6 @@ function startup () {
 		var urlPermalink = window.location.href;
 		var permalinkString = "#";
 
-		console.log (JSON.stringify(theOutline.opml.body, undefined, 4));
-
 		var theTitle = getOutlineTitle (theOutline, nameOutline);
 		document.getElementById ("idOutlineDisplayer").innerHTML = renderOutlineBrowser (theOutline.opml.body, false, urlPermalink, permalinkString, true);
 		document.getElementById ("idOutlineTitle").textContent = theTitle;

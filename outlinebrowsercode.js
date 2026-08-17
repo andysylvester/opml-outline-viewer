@@ -1,4 +1,4 @@
-//no-jQuery version -- the only changes from outlinebrowsercode.js are in
+//no-jQuery version -- the only changes from the original are in
 //getExpansionState, applyExpansionState and ecOutline, plus the slideUp and
 //slideDown helpers below, which stand in for the jQuery animations.
 
